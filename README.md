@@ -4,6 +4,8 @@ A full-stack travel planning app built around four specialized LangGraph agents.
 
 The app provides planning information and links. It does not book or purchase flights or hotel stays.
 
+**Live demo:** https://travel-planner-app-production.up.railway.app
+
 ## What it does
 
 - Accepts an origin and destination airport code, dates, traveler count, budget style, interests, and optional notes.
