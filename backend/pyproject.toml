@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-travel-planner-api"
+version = "0.1.0"
+description = "LangGraph multi-agent travel planning API"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.34,<1.0",
+  "pydantic-settings>=2.7,<3.0",
+  "python-dotenv>=1.0,<2.0",
+  "httpx>=0.28,<1.0",
+  "langgraph>=0.2.75,<2.0",
+  "langgraph-checkpoint-postgres>=2.0,<4.0",
+  "langchain-core>=0.3,<2.0",
+  "openai>=1.66,<3.0",
+  "tavily-python>=0.5,<1.0",
+  "psycopg[binary,pool]>=3.2,<4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
