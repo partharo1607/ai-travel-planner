@@ -3,7 +3,7 @@ import type { FormEvent } from "react";
 import ReactMarkdown from "react-markdown";
 import type { TripPlan, TripRequest } from "./types";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 const interestOptions = ["Food", "Architecture", "Nature", "Museums", "Nightlife", "Local culture"];
 
 function formatSchedule(value: string | null): string {

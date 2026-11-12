@@ -70,6 +70,10 @@ Future schedules are informational. Provider coverage depends on the AviationSta
 
    Open `http://localhost:5173`.
 
+## Production deployment
+
+Build from the repository root with the included `Dockerfile`. The container builds the React frontend and serves it from the FastAPI application, so the site and API share one public origin. Set `DATABASE_URL` to a hosted PostgreSQL connection string and configure `OPENAI_API_KEY` and `OPENAI_MODEL` in the hosting provider's environment settings. `TAVILY_API_KEY` and `AVIATIONSTACK_ACCESS_KEY` enable lodging and flight searches. Keep all credentials in the host's secret settings; do not commit `.env` files.
+
 ## API
 
 `POST /api/trips/plan` accepts JSON shaped like:

@@ -1,8 +1,10 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
 
 from app.config import settings
@@ -64,3 +66,8 @@ async def plan_trip(request: TripRequest) -> TripPlanResponse:
         final_response=result.get("final_response", ""),
         agents=["Flight Agent", "Hotel Agent", "Itinerary Agent", "Final Response Agent"],
     )
+
+
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+if STATIC_DIR.is_dir():
+    app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="frontend")
